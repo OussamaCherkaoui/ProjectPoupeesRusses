@@ -1,10 +1,12 @@
 public abstract class Poupee {
     private int size;
     private int fabricationYear;
-    private boolean opened;
+    private boolean opened=false;
+    private Poupee contient;
     public Poupee(int size){
         this.size=size;
     }
+    public Poupee(){};
     public int getSize() {
         return size;
     }
@@ -29,10 +31,17 @@ public abstract class Poupee {
         this.opened = opened;
     }
 
-    public abstract void ouvrir();
-    public abstract void fermer();
-    public abstract void placerDans(Poupee p);
-    public abstract  void sortirDe(Poupee p);
+    public Poupee getContient() {
+        return contient;
+    }
+
+    public void setContient(Poupee contient) {
+        this.contient = contient;
+    }
+    public abstract void ouvrir(Poupee p);
+    public abstract void fermer(Poupee p);
+    public abstract boolean placerDans(Poupee p);
+    public abstract boolean sortirDe(Poupee p);
 
 }
 
